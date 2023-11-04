@@ -25,9 +25,14 @@ div, span, table, tr, td, ul, li, textarea, input, button { font-family: 'Cascad
 #status{ color: red; font-family:Arial, Helvetica, sans-serif; font-size: smaller; font-weight: bold; }
 #intro{ color: white; background-color: saddlebrown; }
 #intro:hover{ color: rgb(88, 239, 249); background-color: rgb(210, 191, 156); }
-#mail{ position: fixed; bottom: 0px; right: 0px; }
+#contrs{ position: fixed; bottom: 0px; right: 0px; padding-bottom: 40px; background-image: url('background.jpg'); visibility: hidden; }
+#contribute{ position: fixed; z-index: 4; bottom: 0px; right: 40%; background-color: green; color: white; }
+#contribute:hover{ color: rgb(88, 239, 249); }
+#service{ color: red; } #service:hover { color: blueviolet; } 
+#service:click{ color: rgb(88, 239, 249); }
 #Send{ border: 2px solid saddlebrown; text-align: center; }
 #Send:hover{ border: 2px solid orangered; color: orangered; }
+p{ padding: 25px; }
 </style>
 </head>
 <body>
@@ -59,15 +64,25 @@ div, span, table, tr, td, ul, li, textarea, input, button { font-family: 'Cascad
     All this makes society less self-aware and makes scheming the only point. That is why
     psychopaths get to the top, even ones who have no self-awareness and no understanding of
     the story of modern civilization. Innovation (and capitalism) accelerates the trend and
-    gives the system more power, which is... not great.
+    gives the system more power, which is... not great.<br>
+    <div id="toFall">What dystopian trends do we see? (in detail)</div>
     </p><p>
     <b>Solutions</b>
     <ul>
     <li> <b>intuitive politics:</b> Politics should be an extension of ordinary life, so leaders have the same attitude and code of conduct as ordinary good people among themselves.
     <li> <b>strong identity:</b> The state should have a clear, recognized role and be aware of it. A role such that when regular people join it, they naturally understand and embrace it.
-    <li> <b>recognition:</b> Every soul should know what the state respects them for. Know the treatment they can (reliably) expect from the leaders, and understand their intentions.<br>
+    <li> <b>recognition:</b> Every soul should know what the state respects them for. Know the treatment they can (reliably) expect from the leaders, and understand the state's intentions.<br>
         Then, people will act fairly and leave the way free for the projects to succeed, even if they disagree.<br> Even the poorest can know the nation's relation to them if we use intuitive politics.
     </ul>
+    <div id="toDream">How exactly would our ideal state look like?</div>
+    </p>
+    <p>
+        <table style="width: 100%;"><th style="text-align: center;">
+        <img src="wecome.png" width="450"></th></table>
+    <b>Our initiative</b><br>
+    We are students, not rich investors or tech developers. We try to figure out and clarify the logic behind civilization so we could avoid a collapse. 
+    <br>
+    What and where exactly will we do?<br>
     </p>
     </div>
 <div class="sec" id="Fall"><table style="width: 100%;">
@@ -79,13 +94,18 @@ div, span, table, tr, td, ul, li, textarea, input, button { font-family: 'Cascad
     <th style="width:100%; text-align: center;">The Plan</th></table></div>
 <div class="sec" id="Dream"><table style="width: 100%;">
     <th style="width:100%; text-align: center;">The Dream</th></table></div>
+<div id="contribute">CONTRIBUTE</div>
+<div id="contrs">
+<div id="services">Your knowledge might be valuable for us, check our offers here</div>
 <div id="mail">
     <table>
+        <th>Criticize the project via e-mail, show no mercy</th>
         <tr><td>Mail (fill if you want a response): </td><td><input type="text" id="Mail" placeholder="myname@domain.com"> </td></tr>
         <tr><td>Title: </td><td><input type="text" id="title" placeholder="Too utopian to work"> </td></tr>
         <tr><td>Message: </td><td><textarea id="message" style="width: 100%;"></textarea> </td></tr>
         <tr><td colspan="2" id="Send">Send</td></tr>
     </table>
+</div>
 </div>
 <script>
 function git(str){ return document.getElementById(str); }
@@ -99,6 +119,10 @@ git('mission').addEventListener('click', ()=>{ sw('Mission'); });
 git('plan').addEventListener('click', ()=>{ sw('Plan'); });
 git('dream').addEventListener('click', ()=>{ sw('Dream'); });
 git('Send').addEventListener('click', sendMail);
+let contOn = false;
+git('contribute').addEventListener('click', ()=>{ 
+    git('contribute').style.visibility = contOn === true ? 'hidden' : 'visible';
+    if(contOn === true){ contOn = false; } else { contOn = true; } });
 function sendMail(){
     fetch(`https://lastguardsleft-3b22b7d7ff83.herokuapp.com/`, { 
     method: 'POST',
