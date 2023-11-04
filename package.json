@@ -1,0 +1,14 @@
+{
+    "name": "Last Guards Left", 
+    "version": "0.0", 
+    "main": "server.js", 
+    "engines" : { 
+      "npm" : ">=6.0.0",
+      "node" : ">=18.0.0"
+    },
+    "scripts": 
+      {
+        "start": "NODE_ENV=dev DEBUG=body-parser:* node server.js", 
+        "build": "npm install ws; npm install express; npm install nodemailer; npm install core-js; npm install fs;"
+      }
+  }
