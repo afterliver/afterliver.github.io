@@ -38,11 +38,18 @@ div, span, table, tr, td, ul, li, textarea, input, button { font-family: 'mediev
         <td id="dream">Utopia</td>
     </tr>
 </table>
-<div class="sec" id="Intro">This is the intro</div>
-<div class="sec" id="Fall">This is about the West's fall</div>
-<div class="sec" id="Mission">This is about what should be done</div>
-<div class="sec" id="Plan">This is the plan</div>
-<div class="sec" id="Dream">This is the utopian dream</div>
+<div class="sec" id="Intro"><table style="width: 100%;">
+    <th style="width:100%; text-align: center;">Introduction</th></table>
+    This is the intro</div>
+<div class="sec" id="Fall"><table style="width: 100%;">
+    <th style="width:100%; text-align: center;">Western Fall</th></table>
+    This is about the West's fall</div>
+<div class="sec" id="Mission"><table style="width: 100%;">
+    <th style="width:100%; text-align: center;">Dangers and Missions</th></table></div>
+<div class="sec" id="Plan"><table style="width: 100%;">
+    <th style="width:100%; text-align: center;">The Plan</th></table></div>
+<div class="sec" id="Dream"><table style="width: 100%;">
+    <th style="width:100%; text-align: center;">The Dream</th></table></div>
 <div id="mail">
     <table>
         <tr><td>Mail (fill if you want a response): </td><td><input type="text" id="Mail" placeholder="myname@domain.com"> </td></tr>
@@ -56,6 +63,7 @@ function git(str){ return document.getElementById(str); }
 function qSel(str){ return document.querySelectorAll(str); }
 function sw(str){ qSel('.sec').forEach(elt=>elt.style.visibility = 'hidden');
 git(str).style.visibility = 'visible'; }
+sw('Intro');
 git('intro').addEventListener('click', ()=>{ sw('Intro'); });
 git('fall').addEventListener('click', ()=>{ sw('Fall'); });
 git('mission').addEventListener('click', ()=>{ sw('Mission'); });
