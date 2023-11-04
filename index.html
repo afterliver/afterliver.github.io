@@ -33,6 +33,8 @@ div, span, table, tr, td, ul, li, textarea, input, button { font-family: 'Cascad
 #Send{ border: 2px solid saddlebrown; text-align: center; }
 #Send:hover{ border: 2px solid orangered; color: orangered; }
 p{ padding: 25px; }
+#toFall, #toDream{ color: red; }
+#toFall:hover, #toDream:hover{ color: blueviolet; font-weight: bold; }
 </style>
 </head>
 <body>
@@ -74,17 +76,27 @@ p{ padding: 25px; }
     <li> <b>recognition:</b> Every soul should know what the state respects them for. Know the treatment they can (reliably) expect from the leaders, and understand the state's intentions.<br>
         Then, people will act fairly and leave the way free for the projects to succeed, even if they disagree.<br> Even the poorest can know the nation's relation to them if we use intuitive politics.
     </ul>
-    <div id="toDream">How exactly would our ideal state look like?</div>
+    <div id="toDream">See: How exactly would our ideal state look like?</div>
     </p>
     <p>
         <table style="width: 100%;"><th style="text-align: center;">
         <img src="wecome.png" width="450"></th></table>
     <b>Our initiative</b><br>
     We are students, not rich investors or tech developers. We try to figure out and clarify the logic behind civilization so we could avoid a collapse. 
-    <br>
-    What and where exactly will we do?<br>
-    </p>
-    </div>
+    <br><br>
+
+<b>Our civilization model</b><br>
+For us, the foundation of any good state is a code of honor accepted among all people and classes. Then, people have boundaries and can be proud of their nation.<br>
+<b>Code of Honor</b> (this seems cliche/obvious, but still deserves to be asserted)
+<ul>
+<li><b>Harmony.</b> We try to let things around us run smoothly. Disrupting the foundation of the system (especially if deceptively) is an act of enmity and disrespect.
+<li><b>Assertivity.</b> Always point out unsolved wrong things. Clarify the problem and declare the acts you're determined to do. Never let a wrong thing pass just because you face a stronger opponent; if the righteous act is clear, do it. 
+<li><b>Humans are beings.</b> You may condemn or even fight them if they clearly desire to be harmful and can't be convinced. But you aren't allowed to trap and choke the voice of the enemies, not even terrorists. Any opponent might turn out to be worthy of peace.
+<li><b>Focus.</b> There is always hope to do a great thing, even a small one. Even if you sinned, don't be dragged down and focus on taking new opportunities wisely, not regretting old ones. Don't condemn or ridicule a man for small sins. Recognize him for his potential.
+<li><b>Weakness.</b> Reality is always dragged by forces greater than us and rooted in principles we can't change. We can only live by the innate understanding God gave us. So, don't seek perfection or full control. Ask your senses what good you can do today...
+</ul>
+</p>
+</div>
 <div class="sec" id="Fall"><table style="width: 100%;">
     <th style="width:100%; text-align: center;">Western Fall</th></table>
     This is about the West's fall</div>
@@ -115,9 +127,11 @@ git(str).style.visibility = 'visible'; }
 sw('Intro');
 git('intro').addEventListener('click', ()=>{ sw('Intro'); });
 git('fall').addEventListener('click', ()=>{ sw('Fall'); });
+git('toFall').addEventListener('click', ()=>{ sw('Fall'); });
 git('mission').addEventListener('click', ()=>{ sw('Mission'); });
 git('plan').addEventListener('click', ()=>{ sw('Plan'); });
 git('dream').addEventListener('click', ()=>{ sw('Dream'); });
+git('toDream').addEventListener('click', ()=>{ sw('Dream'); });
 git('Send').addEventListener('click', sendMail);
 let contOn = false;
 git('contribute').addEventListener('click', ()=>{ 
