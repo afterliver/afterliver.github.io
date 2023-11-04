@@ -19,7 +19,7 @@ app.get('/*',
 });
 app.post('/*',
   function(req, res){ 
-    write(`${req.method} request at ${req.url}`);
+    write(`${req.method} request at ${req.url} with body ${req.body}`);
     let data = req.body.split('_split_');
                      mailTo('chlebicl@arcig.cz', ...data);
     req.on('close', ()=>{ write('request complete'); });
