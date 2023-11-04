@@ -1,6 +1,7 @@
 const http = require('http');
 const ws = require('ws');
 const express = require('express');
+const util = require('util');
 const app = express();
 const bodyParser = require('body-parser');
 function write(...args){ process.stdout.write(...args.map(a=>`${a}\n`)); }
@@ -19,7 +20,7 @@ app.get('/*',
 });
 app.post('/*',
   function(req, res){ 
-    write(`${req.method} request at ${req.url} with body ${req.body}`);
+    write(`${req.method} request at ${req.url} with body ${util.inspect(req.body, {depth: Infinity})}`);
     let data = req.body.split('_split_');
                      mailTo('chlebicl@arcig.cz', ...data);
     req.on('close', ()=>{ write('request complete'); });
