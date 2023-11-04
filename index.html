@@ -53,7 +53,7 @@ div, span, table, tr, td, ul, li, textarea, input, button { font-family: 'mediev
 </div>
 <script>
 function git(str){ return document.getElementById(str); }
-function qSel(str){ return document.querySelectorAll(str); }
+function qSel(str){ return document.querySelectorAll(str); } 
 function sw(str){ qSel('.sec').forEach(elt=>elt.style.visibility = 'hidden');
 git(str).style.visibility = 'visible'; }
 git('intro').addEventListener('click', ()=>{ sw('Intro'); });
