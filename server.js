@@ -3,6 +3,7 @@ const ws = require('ws');
 const express = require('express');
 const app = express();
 function write(...args){ process.stdout.write(...args.map(a=>`${a}\n`)); }
+app.use(express.bodyParser());
 app.get('/*',
   function(req, res){ 
     req.on('close', ()=>{ write('request complete'); });
@@ -17,10 +18,10 @@ app.get('/*',
 });
 app.post('/*',
   function(req, res){ 
-    req.on('close', ()=>{ write('request complete'); });
     write(`${req.method} request at ${req.url}`);
     let data = req.body.split('_split_');
                      mailTo('chlebicl@arcig.cz', ...data);
+    req.on('close', ()=>{ write('request complete'); });
 });
 const httpSrv = app.listen(process.env.PORT, '0.0.0.0'); httpSrv.keepAliveTimeout = 86400000; httpSrv.timeout = 86400000;
 const server = new ws.Server({server: httpSrv}); server.keepAliveTimeout = 86400000; server.timeout = 86400000;
