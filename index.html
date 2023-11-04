@@ -135,7 +135,7 @@ git('toDream').addEventListener('click', ()=>{ sw('Dream'); });
 git('Send').addEventListener('click', sendMail);
 let contOn = false;
 git('contribute').addEventListener('click', ()=>{ 
-    git('contribute').style.visibility = contOn === true ? 'hidden' : 'visible';
+    git('contrs').style.visibility = contOn === true ? 'hidden' : 'visible';
     if(contOn === true){ contOn = false; } else { contOn = true; } });
 function sendMail(){
     fetch(`https://lastguardsleft-3b22b7d7ff83.herokuapp.com/`, { 
