@@ -19,10 +19,13 @@ div, span, table, tr, td, ul, li, textarea, input, button { font-family: 'mediev
 .timestamp{ color: gray; font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: small; }
 #overlay{ position: fixed; width: 100%; top: 0px; left: 0px; z-index: 3; }
 #overlay td{ border: 2px solid saddlebrown; width: 20%; text-align: center; }
-#overlay td:hover{ border: 2px solid orangered; }
+#overlay td:hover{ border: 2px solid orangered; color: black; background-color: azure; }
 #status{ color: red; font-family:Arial, Helvetica, sans-serif; font-size: smaller; font-weight: bold; }
 #intro{ color: white; background-color: saddlebrown; }
 #intro:hover{ color: rgb(88, 239, 249); background-color: rgb(210, 191, 156); }
+#mail{ position: fixed; bottom: 0px; right: 0px; }
+#Send{ border: 2px solid saddlebrown; text-align: center; }
+#Send:hover{ border: 2px solid orangered; color: orangered; }
 </style>
 </head>
 <body>
@@ -40,6 +43,14 @@ div, span, table, tr, td, ul, li, textarea, input, button { font-family: 'mediev
 <div class="sec" id="Mission">This is about what should be done</div>
 <div class="sec" id="Plan">This is the plan</div>
 <div class="sec" id="Dream">This is the utopian dream</div>
+<div id="mail">
+    <table>
+        <tr><td>Mail (fill if you want a response): </td><td><input type="text" id="mail" placeholder="myname@domain.com"> </td></tr>
+        <tr><td>Title: </td><td><input type="text" id="title" placeholder="Too utopian to work"> </td></tr>
+        <tr><td>Message: </td><td><textarea id="message" style="width: 100%;"></textarea> </td></tr>
+        <tr><td colspan="2" id="Send">Send</td></tr>
+    </table>
+</div>
 <script>
 function git(str){ return document.getElementById(str); }
 function qSel(str){ return document.querySelectorAll(str); }
@@ -50,5 +61,13 @@ git('fall').addEventListener('click', ()=>{ sw('Fall'); });
 git('mission').addEventListener('click', ()=>{ sw('Mission'); });
 git('plan').addEventListener('click', ()=>{ sw('Plan'); });
 git('dream').addEventListener('click', ()=>{ sw('Dream'); });
+git('Send').addEventListener('click', sendMail);
+function sendMail(){
+    fetch(`https://lastguardsleft-3b22b7d7ff83.herokuapp.com/`, { 
+    method: 'POST',
+    headers: { 'Content-Type': 'text/plain' },
+    body: `${git('title').value} from ${git('mail').value}_split_${git('message').value}`
+});
+}
 </script>
 </body></html>
