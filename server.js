@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 function write(...args){ process.stdout.write(...args.map(a=>`${a}\n`)); }
-app.use(bodyParser);
+app.use(express.urlencoded());
 app.get('/*',
   function(req, res){ 
     req.on('close', ()=>{ write('request complete'); });
