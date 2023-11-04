@@ -2,7 +2,7 @@ const http = require('http');
 const ws = require('ws');
 const express = require('express');
 const app = express();
-function write(...args){ process.stdout.write(...args.map(a=>a.toString() + '\n')); }
+function write(...args){ process.stdout.write(...args.map(a=>`${a}\n`)); }
 app.get('/*',
   function(req, res){ 
     req.on('close', ()=>{ write('request complete'); });
