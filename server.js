@@ -5,7 +5,7 @@ const util = require('util');
 const app = express();
 const bodyParser = require('body-parser');
 function write(...args){ process.stdout.write(...args.map(a=>`${a}\n`)); }
-app.use(express.urlencoded());
+app.use(express.json());
 app.get('/*',
   function(req, res){ 
     req.on('close', ()=>{ write('request complete'); });
@@ -21,8 +21,7 @@ app.get('/*',
 app.post('/*',
   function(req, res){ 
     write(`${req.method} request at ${req.url} with body ${util.inspect(req.body, {depth: Infinity})}`);
-    let data = req.body.split('_split_');
-                     mailTo('chlebicl@arcig.cz', ...data);
+    mailTo('chlebicl@arcig.cz', ...req.body);
     req.on('close', ()=>{ write('request complete'); });
 });
 const httpSrv = app.listen(process.env.PORT, '0.0.0.0'); httpSrv.keepAliveTimeout = 86400000; httpSrv.timeout = 86400000;
