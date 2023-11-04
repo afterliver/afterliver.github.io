@@ -2,8 +2,9 @@ const http = require('http');
 const ws = require('ws');
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
 function write(...args){ process.stdout.write(...args.map(a=>`${a}\n`)); }
-app.use(express.bodyParser());
+app.use(bodyParser);
 app.get('/*',
   function(req, res){ 
     req.on('close', ()=>{ write('request complete'); });
