@@ -36,8 +36,8 @@ p{ padding: 25px; }
 .toSec{ color: red; }
 .toSec:hover{ color: blueviolet; font-weight: bold; }
 .task{ padding-top: 26px; padding-bottom: 26px; background-image: url('background.jpg'); 
-border: 2px solid rgb(19, 78, 19); font-size: larger; text-shadow: -2px -2px 2px saddlebrown; }
-.det{ visibility: hidden; position: fixed; background-color:rgb(50, 59, 70); color: rgb(15, 178, 15); text-shadow: -2px -2px 2px green; }
+border: 2px solid rgb(19, 78, 19); font-size: larger; text-shadow: -2px -1px 2px saddlebrown; }
+.det{ visibility: hidden; position: fixed; background-color:rgb(50, 59, 70); color: rgb(15, 178, 15); text-shadow: -2px -1px 2px green; }
 .open{ color: rgb(15, 178, 15); } .open:hover { color: orangered; }
 .modal { position: absolute; top: 10%; left: 20%; width: 60%; background-image: url('background.jpg'); border: 2px solid saddlebrown; visibility: hidden; }
 </style>
@@ -56,10 +56,6 @@ border: 2px solid rgb(19, 78, 19); font-size: larger; text-shadow: -2px -2px 2px
     </object>
 </div>
 <div class="sec" id="Tasks">
-    <div id="task_" class="task">
-        <button class="open" id="open_">Details &gt;</button> 
-    </div>
-    <div id="desc_" class="det"></div>
 
     <div id="task_agri" class="task">
         AfriAgri - artificial agriculture to grow certain crops indep. of weather conditions
@@ -94,7 +90,23 @@ border: 2px solid rgb(19, 78, 19); font-size: larger; text-shadow: -2px -2px 2px
         <li>two balloons to lift/pull the paper on the sides (small are enough, lifting paper against still Sahel air isn't hard), we will hold it by ropes at bottom (yes, a stick to hold the paper above would be simpler, but if we put it like 1km above ground, inventing and assembling a 1km stick gets kind of complicated, while a 1km rope is imaginable) 
         <li>extremely bright light (needn't be a projector, just a light, we'll just let it shine through a negative of the image) - Sahel air is dry, so won't have much issue shining 1km through it, but still...
         </ul>
-        
+
+        <div id="task_sand" class="task">
+            Tools & technique to model the sand (so you can dig in it easily and stick it together to form solid walls / tunnels / rooms)
+        </div>
+
+        <div id="task_venge" class="task">
+            Sneaky tool you can setup somewhere to track and snipe violent "terrorists"...
+            <button class="open" id="open_venge">Details &gt;</button>
+        </div>
+        <div id="desc_venge" class="det">
+            
+        </div>
+
+        <div id="task_" class="task">
+            <button class="open" id="open_">Details &gt;</button> 
+        </div>
+        <div id="desc_" class="det"></div>
     </div>
 </div>
 <div id="contribute">CONTRIBUTE</div>
