@@ -49,98 +49,11 @@ border: 2px solid rgb(19, 78, 19); font-size: larger; text-shadow: -2px -2px 2px
         <td id="tasks">Tasks</td>
     </tr>
 </table>
-<div class="sec" id="Intro"><table style="width: 100%;">
-    <th style="width:100%; text-align: center;">Introduction</th></table>
-    <p>Last Guards Left is an initiative to bring old good attitudes into modern civilization. 
-        We try to understand and solve the deterioration of society around us.<br>
-        In short, here are the (perhaps Europe-specific) problems and the way we aim to solve them:</p>
-    <p>
-    <b style="color:red;">Problems</b>
-    <ul>
-    <li> <b>goalless, unchanging comfort:</b><br> makes people insensitive to reality and passive or not concerned (they subconsciously expect unchanging prosperity). 
-    The public barely publicly question anything, even when things get bad...
-    <li> <b>no real (public) actors:</b><br> people lose awareness of the foundation of humanity.<br>
-    <i>Eg. people use 200 liters of water a day and don't perceive that having any consequences</i><br>
-    So, they see no issues to be discussed, no decision is made and the state loses identity.<br>
-    It may also be due to people not experiencing real social hardship. They don't know how to set things right, because the state has always done that for them.<br>
-    The lack of incentive causes reliance on low-effort info (the internet), which is corporate-controlled.<br>
-    
-    <br>In effect, democracy becomes powerless.
-    <li> <b>economy of pride:</b><br> In abundance, people stop doing real change. Persons, companies and politicians use intellectuality, bureaucracy and networks to achieve grandiosity. So, legal procedures, information nets and theoretical knowledge get overvalued - in other words, the system breeds lengthy pointless procedures.<br> 
-    <i>Eg. calling sophisticated company meetings just to feel cultivated/important</i><br>
-    </ul>
-    All this makes society less self-aware and the economy uncontrollable:<br>
-    Psychopaths get to the top despite lacking strong identity/convictions.<br>
-    Technological fever gives megacorporates control over people's social status and reality in general.<br>
-    People lack incentive to stand for things and say them loud.<br><br>
-
-    <!-- <div id="toFall">What dystopian trends do we see? (in detail)</div> -->
-    </p><p>
-    <b style="color:red;">Our initiative</b><br>
-    We are students, not rich investors or tech developers. 
-    We launched this out of passion for the things we want to see happen.
-    </p>
-    <b>To generalize our goals, before we get to the project - </b>
-    <p>
-    Above all, we want politics and careers to be an <b>extension of ordinary life,</b>
-    where it's not only about machinations and financial empire-building, 
-    but also strong identity and sensible relationships with others.<br>
-    Leadership should grow from respect in local communities...
-    </p>
-    <p>
-    The market should be competitive and profit-driven, but its output should be restricted
-    to sensible things. It should have clear oversight of each economic field, simplify its 
-    logistics and restrict its output. This would save loads of intelligence and workforce 
-    for real achievement...
-    </p>
-    <p>
-    Real achievement - a lot of business should be driven by rewards from the government 
-    for scoring in stated goals, rather than direct profit. This would allow country leaders
-    to aim the nation's talent and effort at decisive changes around them, rather than 
-    each person working for their own sake.
-    </p>
-    <b style="color:red;">Project TradChad</b><br>
-    We are developing a simple agricultural model to grow certain crops artificially, 
-    unaffected by weather and soil. So, we can supply hungry peoples (eg. in Africa)
-    with food, give them worthwhile enterprise to engage in, and also give richer people
-    a way of changing the world. 
-    <p>
-    We wanted to give this dream a more precise shape, so we put together a plan for 
-    building a small new civilization from impoverished / corrupt African regions 
-    (we have reasons for that!) <br>
-    We looked for a civilized, unnoticed place ruled by traditional people 
-    and surrounded by corruption...<br>
-    So, as a showcase, here is a plan we would execute. Yes, if it works out, we will!
-    </p>
-    <table style="width: 100%;"><th style="text-align: center;">
-        <img src="wecome.png" width="500"></th></table>
-    <h3>Somaliland 2025</h3>
-    This country, it really believes in all the things we do. Traditional small communities, 
-    leaving others space to succeed, valuing artistic words even in politics (=strong identity!).
-    <br><br>
-    Given the choice, we would certainly come... and set up a small charitative project, offering 
-    poor people a worthwhile enterprise to engage in, and richer people an opportunity to shape the 
-    world around them.
-    <br><br>
-    We are developing a simple agriculture model that 
-    lets you grow certain crop types artificially, unaffected by weather and soil. So, we 
-    would first raise a small charitative project to make the model run (it isn't very expensive, so). 
-    Then, we can setup food supply for hungry peoples (be it from Ethiopia, Kenya or really any other place). 
-    Here, the building starts.<br><br>
-    
-    
-
-    <!--<p>
-    
-
-    <ul>
-    <li> <b></b> </li>
-    <li> <b>intuitive politics:</b> Politics should be an extension of ordinary life, so leaders have the same attitude and code of conduct as ordinary good people among themselves.
-    <li> <b>strong identity:</b> The state should have a clear, recognized role and be aware of it. A role such that when regular people join it, they naturally understand and embrace it.
-    <li> <b>recognition:</b> Every soul should know what the state respects them for. Know the treatment they can (reliably) expect from the leaders, and understand the state's intentions.<br>
-        Then, people will act fairly and leave the way free for the projects to succeed, even if they disagree.<br> Even the poorest can know the nation's relation to them if we use intuitive politics.
-    </ul>
-    </p>-->
+<div class="sec" id="Intro">
+    <table style="width: 100%;"><th style="width:100%; text-align: center;">Introduction</th></table>
+    <object data="TradChad.pdf">
+        <p>Failed to display PDF file</p>
+    </object>
 </div>
 <div class="sec" id="Tasks">
     <div id="task_" class="task">
@@ -277,10 +190,6 @@ sw('Intro');
 git('intro').addEventListener('click', ()=>{ sw('Intro'); });
 git('tasks').addEventListener('click', ()=>{ sw('Tasks'); });
 git('Send').addEventListener('click', sendMail);
-git('iranletter').addEventListener('mouseenter', ()=>{ git('Iranletter').style.visibility = 'visible'; });
-git('iranletter').addEventListener('mouseleave', ()=>{ git('Iranletter').style.visibility = 'hidden'; });
-git('israelletter').addEventListener('mouseenter', ()=>{ git('Israelletter').style.visibility = 'visible'; });
-git('israelletter').addEventListener('mouseleave', ()=>{ git('Israelletter').style.visibility = 'hidden'; });
 git('Tasks').addEventListener('click', (event)=>{ let elt = event.target;
 let data = elt.id.split('_');
 if(data[0] === 'open'){ 
