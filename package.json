@@ -1,5 +1,5 @@
 {
-    "name": "Last Guards Left", 
+    "name": "skryte-zvire", 
     "version": "0.0", 
     "main": "server.js", 
     "engines" : { 
@@ -8,7 +8,7 @@
     },
     "scripts": 
       {
-        "start": "NODE_ENV=dev DEBUG=body-parser:* node server.js", 
-        "build": "npm install ws; npm install express; npm install body-parser; npm install nodemailer; npm install core-js; npm install fs; npm install util;"
+        "start": "node server.js", 
+        "build": "npm start; npm install express;"
       }
   }
