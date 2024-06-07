@@ -10,7 +10,7 @@ app.get('/*',
   function(req, res){ 
     req.on('close', ()=>{ write('request complete'); });
     write(`${req.method} request at ${req.url}`);
-   
+    if((req.url === '/') || (req.url === '/hgjsFg')){
       write(
         res.sendFile(
           'homepage.html', 
@@ -18,6 +18,7 @@ app.get('/*',
           (err)=>{ if(err?.stack){write(err.stack.split('\n').splice(0, 2)); } }
         )
       ); 
+    }
   });
 app.post('/*',
   function(req, res){ 
