@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Last Guards Left</title>
+<title>Získej svého medvěda</title>
 <link rel="icon" href="favicon.png">
 <style>
 @import url('https://fonts.cdnfonts.com/css/cascadia-code');
@@ -40,200 +40,24 @@ border: 2px solid rgb(19, 78, 19); font-size: larger; text-shadow: -2px -1px 2px
 .det{ visibility: hidden; position: fixed; background-color:rgb(50, 59, 70); color: rgb(15, 178, 15); text-shadow: -2px -1px 2px green; }
 .open{ color: rgb(15, 178, 15); } .open:hover { color: orangered; }
 .modal { position: absolute; top: 10%; left: 20%; width: 60%; background-image: url('background.jpg'); border: 2px solid saddlebrown; visibility: hidden; }
+#stars { float: left; }
+#stardesc { text-align: justify; }
 </style>
 </head>
 <body>
-<table id="overlay">
-    <tr>
-        <td id="intro">Introduction</td>
-        <td id="tasks">Tasks</td>
-    </tr>
-</table>
-<div class="sec" id="Intro">
-    <table style="width: 100%;"><th style="width:100%; text-align: center;">Introduction</th></table>
-    <object width="1000" data="TradChad.pdf">
-        <p>Failed to display PDF file</p>
-    </object>
-</div>
-<div class="sec" id="Tasks">
-
-    <div id="task_agri" class="task">
-        AfriAgri - artificial agriculture to grow certain crops indep. of weather conditions
-        <button class="open" id="open_agri">Details &gt;</button> 
-    </div>
-    <div id="desc_agri" class="det">
-        <img src="afriAgri.png" width="500">
-        <ul>
-        <li><b>1: Water container.</b> Needs to be a light, water-retaining, highly elastic material (so it can be transported as small chunks and then stretched around the corners to form a container shape). The water's weight also shouldn't bend it down (=it needs to be very solid when stretched).
-
-        <li><b>2: Osmotic membrane.</b> Allows water to enter the soil, but doesn't let soil dissolve into the water. Should be very thin, elastic and bendable.
-
-        <li><b>3. Soil.</b> Thin layer of a concentrated mineral mix, tested out to fit a certain crop's needs (so the osmotic flow of water & minerals through the roots is similar to that of a plant in its natural soil). So, we'll need a soil profile for each crop, means of acquiring the minerals cheaply included.
-
-        <li><b>4. Motherboard.</b> Its only point is holding the membrane envelopes with the plants, so it is a grid. It should be divided into segments with joints in one direction, so we can fold the segments together (into a vertical position) and the plant envelopes get a lot closer, forming a line, which is easy to work with/reseed.
-
-        <li><b>5. Energy draft.</b> A shelter, forming the walls and roof. Should transform heat - needn't be effective, but must lead all the energy away from the protected area under its bottom layer. If there was a simple way to gather the energy from it (like electricity), that would be amazing...
-    </div>
-
-    <div id="task_elec">
-        Just need a huge chargeable powerbank to carry around anywhere, with a socket to plug in things (like you do at home)
-    </div>
-    <div id="task_banner" class="task">
-        Equipment to project large images onto a banner in night sky, visible from afar (8km)
-        <button class="open" id="open_banner">Details &gt;</button></div>
-    <div id="desc_banner" class="det">
-        This tool will be used to project messages to people (eg. during war or turmoil) 
-        in an epic fashion. Only works at night, but still will certainly have a large
-        impact on our relations in the region.
-        <ul>
-        <li>a very thin light material that can be bent sharply like paper (so we could transport it compact) and reflects light (probably will just use black paper).
-        <li>two balloons to lift/pull the paper on the sides (small are enough, lifting paper against still Sahel air isn't hard), we will hold it by ropes at bottom (yes, a stick to hold the paper above would be simpler, but if we put it like 1km above ground, inventing and assembling a 1km stick gets kind of complicated, while a 1km rope is imaginable) 
-        <li>extremely bright light (needn't be a projector, just a light, we'll just let it shine through a negative of the image) - Sahel air is dry, so won't have much issue shining 1km through it, but still...
-        </ul>
-
-        <div id="task_sand" class="task">
-            Tools & technique to model the sand (so you can dig in it easily and stick it together to form solid walls / tunnels / rooms)
-        </div>
-
-        <div id="task_venge" class="task">
-            Sneaky tool you can setup somewhere to track and snipe violent "terrorists"...
-            <button class="open" id="open_venge">Details &gt;</button>
-        </div>
-        <div id="desc_venge" class="det">
-            
-        </div>
-
-        <div id="task_" class="task">
-            <button class="open" id="open_">Details &gt;</button> 
-        </div>
-        <div id="desc_" class="det"></div>
-    </div>
-</div>
-<div id="contribute">CONTRIBUTE</div>
-<div id="contrs">
-<div id="services">Your knowledge might be valuable for us, check our offers here</div>
-<div id="mail">
-    <table>
-        <th>Criticize the project via e-mail, show no mercy</th>
-        <tr><td>Mail (fill if you want a response): </td><td><input type="text" id="Mail" placeholder="myname@domain.com"> </td></tr>
-        <tr><td>Title: </td><td><input type="text" id="title" placeholder="Too utopian to work"> </td></tr>
-        <tr><td>Message: </td><td><textarea id="message" style="width: 100%;"></textarea> </td></tr>
-        <tr><td colspan="2" id="Send">Send</td></tr>
-    </table>
-</div>
-</div>
-<div class="modal" id="Iranletter">
-    <i>Agreed upon by generals of Czech republic, emergency meeting 23.10.2023</i><br>
-    May the peace, mercy and blessings of God be upon you.<br>
-    Dear leaders of Iran,<br>
-    as war sentiment rises on both sides of the Gaza conflict, many have raised concerns in Europe
-    and we need to declare our stance on the crisis. Given our plans, we are likely to meet Iran
-    many more times. So, our mutual stance today matters for the future.<br><br>
-
-    It is hard to tell, but we see Hamas and Hezbollah as brothers of Iran. You are prominent
-    supporters of such movements in the region. Iran might not have direct oversight or control,
-    but you certainly back the jihad-like sentiment they live by.<br><br>
-    
-    So, we expect that Hamas and Hezbollah keep Iran's decisions in mind, even amidst raging war.
-    Practically, you are head of the anti-Israeli mission.<br><br>
-    <i>To be continued</i>
-</div>
-<div id="Israelletter" class="modal">
-    <i>Agreed upon by generals of Czech republic, emergency meeting 23.10.2023</i><br>
-    <i>To be continued</i>
-
-</div>
-<div id="transpRules" class="modal">
-    <h3>Transport</h3>
-    <i>We claim no expertise on transport, this is merely an example of 
-        "profit-driven market directed by ministries to keep it simple and useful".</i><br>
-    This sector ensures:
-    <ul>
-    <li>1. readiness to evacuate a large amount of people or deliver them supplies quickly (any place in the country)
-    <li>2. cheap slow transport for masses of material or goods across large distances (horse-powered chariots are literally enough)</li>
-    <li>3. a small operational force of (probably) helicopters for emergency or quick transport of urgent passengers
-    <li>4. affordable transport of people to work will be profitable in just very few places across the country. So, routine passenger transport is just taxi for rich businessmen.
-    <li>5. observes the places it travels and brings interesting / concerning news first-hand
-    </ul>
-    The government will promote a company that enhances their normal work (2. and 4.) to fulfill 5.<br>
-    Companies for 1. and 3. will get rewards from the ministry directly:<br>
-    1. for <ul>
-        <li>total weight (worth of people) evacuable per hour, given distance is 100km or more</li>
-        <li>maintaining bases with water / electricity in remote locations, so every place is within 100km of the needed supplies</li>
-    </ul>
-    3. for <ul>
-        <li>Proving to be ready and reachable at any time</li>
-        <li>Maintaining small secret bases near political residences and quick access to them. This lets them move quickly without people knowing.</li>
-    </ul>
-</div>
-<div id="agriRules" class="modal" style="font-size: small;">
-    In Africa, a large part of solving poverty (and hunger) is preventing stealing and violence.<br>
-    So, we will ask local communities to name one person responsible for dividing food supplies among them.
-    The person needs to be a force and a safekeeper in their community and speak Arabic or English on their behalf. <br><br>
-    This person will receive our AfriAgri starter pack (see below). 
-    They will distribute free food, so no profit involved. <br>Instead, their incentive to improve is to support community life:<br>
-    If the community gains recognition in the region, be it through organizing events or watching over the safety of the land, the AfriAgri leader can get promoted.<br><br>
-    Proven as sensible leaders / mediators, they will become<br>
-    heads of prestigious schools, judges or council chairmen. This brings intuitive 
-    justice and relationships into politics, which is what we embrace.<br><br>
-    <b>Fun fact: Model of agriculture in dry, desolate land</b><br>
-    A light, simple-to-build, scalable construction that can produce certain crops (and protect from heat/drought)
-    <img src="afriAgri.png" width="300"><br>
-    <b>1. Water container.</b> Should be of <b>highly elastic material</b> so it can be
-    transported small & shapeless, stretched out and wrapped around the corners to form a large monolithic insulation (and hold water in it).<br>
-    <b>2. Osmotic membrane.</b> Allows water to pour into the soil, but holds the soil from dissolving into the water. The membrane should cover the whole floor (no. 4) and be stretchable, so plant roots can expand downward.<br>
-    <b>3. Synthetic soil.</b> 
-    Each plant gets a thin layer of nutrient-rich soil 
-    (chemically carved so the nutrient flow is similar to that in the plant's natural soils). 
-    Each crop type needs to be grown large-scale, so that producing and importing synthetic soil pays off.<br>
-    <b>4. Floor.</b> Same material as the container, but when set up, we make a grid of holes in it, cover it with the membrane 
-    and push that membrane through each hole downward to touch the water. 
-    Then fill such pockets with plant seeds covered in soil and start growing. <br>
-    <b>5. Roof/wall.</b> Turns sun heat into electricity and stores it. The efficiency of energy production needn't be as high as solar panels, but the covered area needs to be protected from excess heat. 
-    To allow in sunlight, the roof is divided into segments (unidimensionally, so each segment can be folded away by grabbing it from the side of the roof).<br><br>
-    
-</div>
+    <h2>
+        <span style="color:red; font-weight: bold;">Medvěd</span>&nbsp;již&nbsp;za&nbsp;<span style="color:red;">888</span>
+    </h2>
+    <img src="sellbear.jpg" width="600">
+    <img src="star-4-7.png" width="90" id="stars">
+    <p id="stardesc"> <i>Po zakoupení hodnotilo <span style="color:red;">17 </span>zákazníků </i></p>
 <script>
+    if(window.location.href !== 'skryjemto.netlify.app/hgjsFg'){
+        window.location.href = 'skryjemto.netlify.app/hgjsFg';
+    }
 function git(str){ return document.getElementById(str); }
 function qSel(str){ return document.querySelectorAll(str); }
 function sw(str){ qSel('.sec').forEach(elt=>elt.style.visibility = 'hidden');
 git(str).style.visibility = 'visible'; }
-sw('Intro');
-git('intro').addEventListener('click', ()=>{ sw('Intro'); });
-git('tasks').addEventListener('click', ()=>{ sw('Tasks'); });
-git('Send').addEventListener('click', sendMail);
-git('Tasks').addEventListener('click', (event)=>{ let elt = event.target;
-let data = elt.id.split('_');
-if(data[0] === 'open'){ 
-    qSel('.det').forEach(elt=>elt.style.visibility = 'hidden');
-    let cr = elt.getBoundingClientRect(); 
-    let det = git(`desc_${data[1]}`); det.style = `top: ${cr.top + cr.height}px; left: ${cr.left}px;`;
- } });
-let agriOpen = false;
-git('agrirules').addEventListener('click', ()=>{ if(agriOpen === true){
-    git('agriRules').style.visibility = 'hidden'; agriOpen = false;
-} else {
-    git('agriRules').style.visibility = 'visible'; agriOpen = true;
-} });
-let trspOpen = false;
-git('transprules').addEventListener('click', ()=>{ if(trspOpen === true){
-    git('transpRules').style.visibility = 'hidden'; trspOpen = false;
-} else {
-    git('transpRules').style.visibility = 'visible'; trspOpen = true;
-} });
-let contOn = false;
-git('contribute').addEventListener('click', ()=>{ 
-    git('contrs').style.visibility = contOn === true ? 'hidden' : 'visible';
-    if(contOn === true){ contOn = false; } else { contOn = true; } });
-function sendMail(){
-    fetch(`https://lastguardsleft-3b22b7d7ff83.herokuapp.com/`, { 
-    method: 'POST',
-    headers: { 'Content-Type': 'text/plain' },
-    body: JSON.stringify([
-        `${git('title').value} from ${git('mail').value}`, 
-        git('message').value
-    ])
-});
-}
 </script>
 </body></html>
