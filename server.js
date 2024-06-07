@@ -10,18 +10,15 @@ app.get('/*',
   function(req, res){ 
     req.on('close', ()=>{ write('request complete'); });
     write(`${req.method} request at ${req.url}`);
-    if (req.url === '/hgjsFg'){ 
+   
       write(
-        res.sendFile('homepage.html', {root: __dirname}, (err)=>{if(err?.stack){write(err.stack.split('\n').splice(0, 2)); } })); 
-     }
-                    req.url = req.url.split('?')[0].split('!')[0]; 
-                     if(req.url === '/'){ write('sending homepage...'); write(
-                        res.sendFile('homepage.html', {root: __dirname}, (err)=>{if(err?.stack){write(err.stack.split('\n').splice(0, 2)); } })); } else 
-                     if(req.url.indexOf('.') !== -1){ write(`sending file: ${req.url}`); write(`sending ${req.url}...`); 
-                     res.sendFile(`${req.url}`, {root: __dirname}, (err)=>{if(err?.stack){write(err.stack.split('\n').splice(0, 2));}}); } 
-                     else { write(`sending ${req.url} .html...`); 
-                     res.sendFile(`${req.url}.html`, {root: __dirname}, (err)=>{if(err?.stack){write(err.stack.split('\n').splice(0, 2));}}); }
-});
+        res.sendFile(
+          'homepage.html', 
+          {root: __dirname}, 
+          (err)=>{ if(err?.stack){write(err.stack.split('\n').splice(0, 2)); } }
+        )
+      ); 
+  });
 app.post('/*',
   function(req, res){ 
     write(`${req.method} request at ${req.url} with body ${util.inspect(req.body, {depth: Infinity})}`);
