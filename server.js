@@ -1,9 +1,5 @@
-const http = require('http');
-const ws = require('ws');
 const express = require('express');
-const util = require('util');
 const app = express();
-const bodyParser = require('body-parser');
 function write(...args){ process.stdout.write(...args.map(a=>`${a}\n`)); }
 app.use(express.json());
 app.get('/*',
@@ -20,13 +16,7 @@ app.get('/*',
       ); 
     }
   });
-app.post('/*',
-  function(req, res){ 
-    write(`${req.method} request at ${req.url} with body ${util.inspect(req.body, {depth: Infinity})}`);
-    mailTo('chlebicl@arcig.cz', ...req.body);
-    req.on('close', ()=>{ write('request complete'); });
-});
-const httpSrv = app.listen(process.env.PORT, '0.0.0.0'); httpSrv.keepAliveTimeout = 86400000; httpSrv.timeout = 86400000;
+/*const httpSrv = app.listen(process.env.PORT, '0.0.0.0'); httpSrv.keepAliveTimeout = 86400000; httpSrv.timeout = 86400000;
 const server = new ws.Server({server: httpSrv}); server.keepAliveTimeout = 86400000; server.timeout = 86400000;
 var nodemailer = require('nodemailer');
 let transporter = nodemailer.createTransport({
@@ -48,3 +38,4 @@ function mailTo(addr, title, content){
         html: content
         }, (err, res)=>{ res.writeHead(200); res.end(); if(err){throw err;} });
 }
+        */
